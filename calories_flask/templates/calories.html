@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}تسجيل حساب جديد{% endblock %}
+{% block content %}
+    <h2>حساب السعرات الحرايه</h2>
+    <form method="POST">
+    <label>Weight:</label><br>
+    <input type="number" name="Weight"><br><br>
+
+    <label>height:</label><br>
+    <input type="number" name="height" ><br><br>
+
+    <label>age:</label><br>
+    <input type="number" name="age" ><br><br>
+
+    <label>kind:</label><br><br>
+    <input list="kind" name="kind"><br><br>
+    <datalist id="kind">
+        <option value="male">
+        <option value="female">
+    </datalist>
+    <button type="submit">تسجيل</button>
+</form>
+
+{% if result %}
+    <h2>عدد السعرات اليومية المطلوبة: {{ result | round(2) }} سعر حراري</h2>
+{% endif %}
+
+
+    <a href="{{ url_for('logout') }}">تسجيل خروج</a><br>
+    <a href="{{ url_for('dashboard') }}">الواجهه الرائيسيه</a><br>
+	<a href="{{ url_for('show') }}">عرض كل بياناتك والسعرات</a><br>
+	<a href="{{ url_for('upload_file') }}">تحميل ملفات</a><br><br>
+	<h2>اختر ملف لرفعه</h2>
+<form method="POST"  action="{{ url_for('upload_file') }}" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <button type="submit">رفع</button>
+</form>
+  
+{% endblock %}

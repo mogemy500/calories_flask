@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}تعديل الحساب{% endblock %}
+{% block content %}
+  <form method="POST" action="{{ url_for('edit_profile') }}">
+    <label>الاسم:</label><br>
+    <input type="text" name="name" value="{{ user_data[0] }}"><br><br>
+
+    <label>الايميل:</label><br>
+    <input type="email" name="email" value="{{ user_data[1] }}" disabled><br><br> <!-- الإيميل مش هيتعدل -->
+
+    <label>الرقم السري:</label><br>
+    <input type="password" name="password" value="{{ user_data[2] }}"><br><br>
+
+    <button type="submit">تعديل</button>
+</form>
+ <a href="{{ url_for('dashboard') }}">رجوع</a>
+
+{% endblock %}

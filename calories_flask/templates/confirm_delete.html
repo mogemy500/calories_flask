@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}تعديل الحساب{% endblock %}
+{% block content %}
+<h3>هل أنت متأكد أنك تريد حذف حسابك؟</h3>
+<form method="POST"action="{{ url_for('delete_account') }}">
+  <button type="submit">نعم، احذف الحساب</button>
+  <a href="{{ url_for('dashboard') }}">رجوع</a>
+</form>
+{% endblock %}

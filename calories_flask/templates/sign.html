@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}تسجيل حساب جديد{% endblock %}
+{% block content %}
+    
+	 
+ 
+	
+	
+	
+	<h2>اضف بيانات الحساب الجديد</h2>
+    <form method="POST"  action="{{ url_for('sign') }}">
+        <label>الاسم:</label><br>
+        <input type="text" name="name"><br><br>
+
+        <label>الايميل:</label><br>
+        <input type="email" name="email" ><br><br>
+        <label>الرقم السري:</label><br>
+        <input type="password" name="password" ><br><br>
+        <button type="submit">تسجيل</button>
+    </form>
+<a href="{{ url_for('login') }}">الذهاب الي صفحه تسجيل الدخول</a>
+    
+    
+{% endblock %}

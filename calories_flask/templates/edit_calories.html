@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}تعديل الحساب{% endblock %}
+{% block content %}
+<form method="POST">
+  الوزن: <input type="number" step="any" name="Weight" value="{{ user_data[0] }}" required><br>
+  الطول: <input type="number" step="any" name="height" value="{{ user_data[1] }}" required><br>
+  العمر: <input type="number" step="any" name="age" value="{{ user_data[2] }}" required><br>
+  النوع:
+  <select name="kind" required>
+    <option value="male" {% if user_data[3] == 'male' %}selected{% endif %}>ذكر</option>
+    <option value="female" {% if user_data[3] == 'female' %}selected{% endif %}>أنثى</option>
+  </select><br>
+  <button type="submit">تحديث</button>
+  
+</form>
+ <a href="{{ url_for('dashboard') }}">رجوع</a>
+{% endblock %}

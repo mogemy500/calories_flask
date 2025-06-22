@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}تسجيل دخول{% endblock %}
+{% block content %}
+    <h2>اضف بيانات الدخول</h2>
+    <form method="POST" action="{{ url_for('login') }}">
+        <label>الايميل:</label><br>
+        <input type="email" name="email"><br>
+
+        <label>الرقم السري:</label><br>
+        <input type="password" name="password" ><br>
+
+        <button type="submit">تسجيل</button>
+    </form>
+
+    
+    
+{% endblock %}

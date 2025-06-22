@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}تعديل الحساب{% endblock %}
+{% block content %}
+<h3>هل أنت متأكد أنك تريد حذف السعرات</h3>
+<form method="POST" action="{{ url_for('delete_calories') }}">
+    <button type="submit" onclick="return confirm('هل أنت متأكد من حذف بيانات السعرات؟')">حذف السعرات</button>
+</form>
+<a href="{{ url_for('dashboard') }}">رجوع</a>
+{% endblock %}

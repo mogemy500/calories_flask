@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}ملف المستخدم{% endblock %}
+{% block content %}
+
+
+<h2>بيانات المستخدم:</h2>
+
+{% if user_data %}
+    <ul>
+        <li>الاسم: {{ user_data[0][0] }}</li>
+        <li>الإيميل: {{ user_data[0][1] }}</li>
+        <li>كلمة المرور: {{ user_data[0][2] }}</li>
+    </ul>
+{% else %}
+    <p>لا توجد بيانات للمستخدم.</p>
+{% endif %}
+       
+   
+<h2>بيانات السعرات:</h2>
+
+{% for row in user_data %}
+    <ul>
+   
+        <li>الوزن: {{ row[3] }}</li>
+        <li>الطول: {{ row[4] }}</li>
+        <li>العمر: {{ row[5] }}</li>
+        <li>النوع: {{ row[6] }}</li>
+        <li>السعرات المحسوبة: {{ row[7] }}</li>
+    </ul>
+    <hr>
+{% endfor %}
+
+
+
+
+<a href="{{ url_for('dashboard') }}">رجوع</a>
+{% endblock %}
+
+
+
